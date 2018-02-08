@@ -1,14 +1,14 @@
 env:
   global:
-      - BUILD_COMMIT=4c4405e2f8909162fce1be74243c7bd94adda54b
-      - REPO_DIR=kiwi
+      - BUILD_COMMIT=master
+      - REPO_DIR=enaml
       - PLAT=x86_64
       - UNICODE_WIDTH=32
       - WHEELHOUSE_UPLOADER_USERNAME=travis-worker
       # Following generated with
       # travis encrypt -r MacPython/enaml-wheels WHEELHOUSE_UPLOADER_SECRET=<the api key>
       - secure:
-          "t4VDvX7RkpeJB1v5sws0egX6Py9aejVSpzkaHgRkUhHZ3F3rBKfSmL6Fh6URRJCkoObMweQDKkWB6vPikGMUEWH4zy7OvT8+UEZ0GB/wY4fBga4iCzs/2NRARshEw/BoPZgGYA5zEZXIl60gIRMGNpD/JjK+qv87/eYFGeXb0Ddzj0XMn1ytY9fOUsiLw40M1F3eu29lU3ZNrLb5sES8+XJ5lRc8Z+r1ZxHecRDZ6jC5/bQC7eGvdhIaESaalxeMxnJ5piWvn3TTq8GFILKO9IHM1HPZMswIfKt8NpZYfTTDAZzrv5xVihq5opP2Vd1qWZbBOE4JASoP3amXmHia15JV9XxS+Y3o7bVY7cWmbOBr5YlWnEb0Li5gCM8uB7R1JWxvcN8Wgc2lRwq/5lNzmVGe/KxXbzAnZfxlMLqS5kInU+iQXBydH/cEU+8LCb9BVYoGvs9AaEHPCbGdrJzZkyGWhcb8+t7psXZ119kEJ9Zp953AUOBMDVcr/vpoop++EQ1WoMkgiIpX+RiI7iiavptwOARJIG2vEA2zw5TD/PHXCkg+Kr/zR2sRH9xaHpggWODJgNfBMoyx8KqNxEjicPxjNmFg0lwb4O96gpjTQp3EzSIrwpYJcXD6fGj3LjWGlJRBqGxkHOHo29asqdu9DLtEcDbKLCgXtCon4B0M7lw="
+          "Qwd1iIt27FMyILaDL+FYmIVf9juOurmej+RQJr40u8JbqfhQfzGpXufojwX4v42sQR3QeoehUuRFccn0mIaxh9HR55UIkmMyX9OlEZF2+FiN7hKqFK+/m9zYUdxQaF6WDDp9+dX1UqZajshuOPh3ak9uVbhOUrTlQrj1NnAgiKTcihFP8YG5vqpL635mUGQZvGVpzcxZ2++5Y6sKkhE9fihtBmBV3zx5LJIphvZIN7Bsu2g1HmNBexYOXlZsWAMzNfkqSaCd7w3irdtAygj3sYmKy1TGnTDLrtFZ+SqVtj0TNxSJAolPnCtBPeZevrTEYYVFp1mHltoGl43PLPGTzWdmba6H3OQt76ADDsZ85mevkod5OTgqRp2A9WO+gFN9fl/FHjnHNheDSIXUJHKqUZdYLgoxnfSM+QddQybFA6zhOF+pc4x9O/UCijO8TnNVR8hHe9rJzBPDzp5zx4NXV3KPi4bMAtTc/fNxMqN6k57cBH3aKbyKuhvo9Na1m40R09zmZM3kwhqjaY14U9gRG6lXUFF+k2YU2RAgwvE/4Qq0AifX5d1m871WhcFeryE/B09fPfp+Oy1+c5XG1MaqxUSSFZoM9KdKsM5bnzA4+Fxa+UrErIw+jETheGCjdEnadanXE7vIkKAFVQ+d7LE+PvizqBgoH0tuqpRTczJwq8w="
 
 language: python
 # Default Python version is usually 2.7

@@ -3,7 +3,7 @@
 
 environment:
   global:
-    BUILD_COMMIT: 4c4405e2f8909162fce1be74243c7bd94adda54b
+    BUILD_COMMIT: master
     WHEELHOUSE_UPLOADER_USERNAME: travis-worker
     WHEELHOUSE_UPLOADER_SECRET:
       secure: 9s0gdDGnNnTt7hvyNpn0/ZzOMGPdwPp2SewFTfGzYk7uI+rdAN9rFq2D1gAP4NQh
@@ -52,14 +52,14 @@ test_script:
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
-  - path: kiwi\dist\*
+  - path: enaml\dist\*
 
 on_success:
   # Upload the generated wheel package to Rackspace
   # On Windows, Apache Libcloud cannot find a standard CA cert bundle so we
   # disable the ssl checks.
   - pip install wheelhouse-uploader
-  - python -m wheelhouse_uploader upload --no-update-index --no-ssl-check --local-folder=kiwi\dist wheels
+  - python -m wheelhouse_uploader upload --no-update-index --no-ssl-check --local-folder=enaml\dist wheels
 
 cache:
   # Use the appveyor cache to avoid re-downloading large archives such

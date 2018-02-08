@@ -1,0 +1,9 @@
+[submodule "kiwi"]
+	path = kiwi
+	url = https://github.com/nucleic/kiwi
+[submodule "multibuild"]
+	path = multibuild
+	url = https://github.com/matthew-brett/multibuild
+[submodule "enaml"]
+	path = enaml
+	url = https://github.com/nucleic/enaml

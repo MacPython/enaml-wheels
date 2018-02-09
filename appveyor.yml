@@ -10,13 +10,21 @@ environment:
 
   matrix:
     - PYTHON: C:\Python27
+      INSTALL_QT: 0
     - PYTHON: C:\Python27-x64
+      INSTALL_QT: 0
     - PYTHON: C:\Python34
+      INSTALL_QT: 0
     - PYTHON: C:\Python34-x64
+      INSTALL_QT: 0
     - PYTHON: C:\Python35
+      INSTALL_QT: 1
     - PYTHON: C:\Python35-x64
+      INSTALL_QT: 1
     - PYTHON: C:\Python36
+      INSTALL_QT: 1
     - PYTHON: C:\Python36-x64
+      INSTALL_QT: 1
 
 install:
   # Prepend newly installed Python to the PATH of this build (this cannot be
@@ -43,11 +51,12 @@ build: false  # Not a C# project, build stuff at the test step instead.
 test_script:
   - pip install --pre --no-index --find-links .\enaml\dist enaml
   - pip install pytest
+  - if %INSTALL_QT% EQU 1 pip install pytest-qt pyqt5=5.9
   # Change into an innocuous directory and find tests from installation
   - mkdir for_testing
   - cd for_testing
   - python --version
-  - py.test ..\enaml
+  - py.test ..\enaml\tests
   - cd ..
 
 artifacts:

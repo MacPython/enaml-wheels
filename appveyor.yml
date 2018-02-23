@@ -57,7 +57,7 @@ test_script:
   - pip uninstall -y %PACKAGE_NAME%
   - pip install --no-cache-dir --pre --no-index --find-links .\%REPO_DIR%\dist %PACKAGE_NAME%
   - pip install pytest
-  - if %INSTALL_QT% EQU 1 pip install pytest-qt pyqt5=5.9
+  - if %INSTALL_QT% EQU 1 pip install pytest-qt pyqt5==5.9
   # Change into an innocuous directory and find tests from installation
   - mkdir for_testing
   - cd for_testing

@@ -53,7 +53,7 @@ test_script:
   - pip install --pre --find-links .\enaml\dist enaml
   # Make absolutely sure we're installing the local enaml wheel
   - pip uninstall -y enaml
-  - pip install --pre --no-index --find-links .\enaml\dist enaml
+  - pip install --no-cache-dir --pre --no-index --find-links .\enaml\dist enaml
   - pip install pytest
   - if %INSTALL_QT% EQU 1 pip install pytest-qt pyqt5=5.9
   # Change into an innocuous directory and find tests from installation

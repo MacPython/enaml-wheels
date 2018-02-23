@@ -67,7 +67,7 @@ test_script:
 
 artifacts:
   # Archive the generated wheel package in the ci.appveyor.com build report.
-  - path: enaml\dist\*
+  - path: $(REPO_DIR)\dist\*
 
 on_success:
   # Upload the generated wheel package to Rackspace

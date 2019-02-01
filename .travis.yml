@@ -2,7 +2,7 @@ env:
   global:
       # Daily commit is used on master branch and build commit on named
       # branches
-      - BUILD_COMMIT=0.10.3
+      - BUILD_COMMIT=0.10.3-wheels
       - DAILY_COMMIT=master
       - REPO_DIR=enaml
       - PLAT=x86_64

@@ -10,9 +10,6 @@ function pre_build {
 function run_tests {
     # Runs tests on installed distribution from an empty directory
     pip install pytest
-    if [ ${MB_PYTHON_VERSION:0:1} -gt 2 ] && [ ${MB_PYTHON_VERSION:2:3} -gt 4 ]; then
-        pip install pyqt5 pytest-qt;
-    fi
     python --version
     py.test ../enaml/tests
 }

@@ -11,10 +11,15 @@ function run_tests {
     # Runs tests on installed distribution from an empty directory
     pip install pytest
     if [ ${MB_PYTHON_VERSION:0:1} -gt 2 ] && [ ${MB_PYTHON_VERSION:2:3} -gt 5 ]; then
-        sudo apt-get -qq update
-        sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0
-        matchbox-window-manager&
-        sleep 5
+        if [ -z "$IS_OSX" ]; then  # Running on Linux
+            export DISPLAY=:99.0
+            sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1400x900x24 -ac +extension GLX +render
+            sudo apt-get -qq update
+            sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0
+            matchbox-window-manager&
+            sleep 5
+
+        fi
         pip install pyqt5 pytest-qt pytest-xvfb;
     fi
     python --version

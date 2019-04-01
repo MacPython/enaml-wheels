@@ -20,7 +20,6 @@ sudo: required
 dist: trusty
 services:
   - docker
-  - xvfb
 
 matrix:
   exclude:

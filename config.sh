@@ -13,7 +13,8 @@ function run_tests {
     if [ ${MB_PYTHON_VERSION:0:1} -gt 2 ] && [ ${MB_PYTHON_VERSION:2:3} -gt 5 ]; then
         if [ -z "$IS_OSX" ]; then  # Running on Linux
             export DISPLAY=:99.0
-            sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1400x900x24 -ac +extension GLX +render
+            sh -e /etc/init.d/xvfb start
+            sleep 3
             sudo apt-get -qq update
             sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0
             matchbox-window-manager&

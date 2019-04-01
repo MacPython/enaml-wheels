@@ -4,7 +4,10 @@
 function pre_build {
     # Any stuff that you need to do before you start building the wheels
     # Runs in the root directory of this repository.
-    :
+    sudo apt-get -qq update
+    sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0
+    matchbox-window-manager&
+    sleep 5
 }
 
 function run_tests {

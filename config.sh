@@ -12,16 +12,13 @@ function run_tests {
     pip install pytest
     if [ ${MB_PYTHON_VERSION:0:1} -gt 2 ] && [ ${MB_PYTHON_VERSION:2:3} -gt 5 ]; then
         if [ -z "$IS_OSX" ]; then  # Running on Linux
-            export DISPLAY=:99.0
-            sh -e /etc/init.d/xvfb start
-            sleep 3
             sudo apt-get -qq update
             sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0
             matchbox-window-manager&
             sleep 5
-
+            pip install pytest-xvfb;
         fi
-        pip install pyqt5 pytest-qt pytest-xvfb;
+        pip install pyqt5 pytest-qt;
     fi
     python --version
     py.test ../enaml/tests

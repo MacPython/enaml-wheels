@@ -12,8 +12,15 @@ function run_tests {
     pip install pytest
     if [ ${MB_PYTHON_VERSION:0:1} -gt 2 ] && [ ${MB_PYTHON_VERSION:2:3} -gt 5 ]; then
         if [ -z "$IS_OSX" ]; then  # Running on Linux
-            export DISPLAY=:99.0
             sudo apt-get -qq update
+            sudo apt-get install -y xvfb
+            # Allow to run xvfb as a service
+            cp ${CONFIG_PATH:-xvfb.init} /etc/init.d/xvfb
+            chmod +x /etc/init.d/xvfb
+            update-rc.d xvfb defaults
+            service xvfb start
+            export DISPLAY=:10
+            sleep 5
             sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0
             matchbox-window-manager&
             sleep 5

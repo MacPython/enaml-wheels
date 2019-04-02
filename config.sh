@@ -13,7 +13,7 @@ function run_tests {
     if [ ${MB_PYTHON_VERSION:0:1} -gt 2 ] && [ ${MB_PYTHON_VERSION:2:3} -gt 5 ]; then
         if [ -z "$IS_OSX" ]; then  # Running on Linux
             sudo apt-get -qq update
-            sudo apt-get install -y xvfb
+            sudo apt-get install -y xvfb --fix-missing
             # Allow to run xvfb as a service
             cp /io/xvfb.init /etc/init.d/xvfb
             chmod +x /etc/init.d/xvfb

@@ -15,7 +15,7 @@ function run_tests {
             sudo apt-get -qq update
             sudo apt-get install -y xvfb
             # Allow to run xvfb as a service
-            cp ${CONFIG_PATH:-xvfb.init} /etc/init.d/xvfb
+            cp /io/xvfb.init /etc/init.d/xvfb
             chmod +x /etc/init.d/xvfb
             update-rc.d xvfb defaults
             service xvfb start

@@ -10,22 +10,7 @@ function pre_build {
 function run_tests {
     # Runs tests on installed distribution from an empty directory
     pip install pytest
-    if [ ${MB_PYTHON_VERSION:0:1} -gt 2 ] && [ ${MB_PYTHON_VERSION:2:3} -gt 5 ]; then
-        if [ -z "$IS_OSX" ]; then  # Running on Linux
-            sudo apt-get -qq update
-            sudo apt-get install -y xvfb --fix-missing
-            # Allow to run xvfb as a service
-            cp /io/xvfb.init /etc/init.d/xvfb
-            chmod +x /etc/init.d/xvfb
-            update-rc.d xvfb defaults
-            service xvfb start
-            export DISPLAY=:10
-            sleep 5
-            sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0 --fix-missing
-            matchbox-window-manager&
-            sleep 5
-            pip install pytest-xvfb;
-        fi
+    if [ -n "$IS_OSX" ]; then  # Running on Linux
         pip install pyqt5 pytest-qt;
     fi
     python --version

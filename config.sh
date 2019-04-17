@@ -21,7 +21,7 @@ function run_tests {
             service xvfb start
             export DISPLAY=:10
             sleep 5
-            sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0
+            sudo apt-get install -y matchbox-window-manager xterm libxkbcommon-x11-0 --fix-missing
             matchbox-window-manager&
             sleep 5
             pip install pytest-xvfb;

@@ -153,7 +153,7 @@ in your ``~/.pypirc`` file::
     password:your_password
 
 So, in this case, `wheel-uploader` will download all wheels starting with
-`enaml-1.0.1-` from the URL in ``$CDN_URL`` above to ``~/wheelhouse``, then
+`enaml-0.10.3-` from the URL in ``$CDN_URL`` above to ``~/wheelhouse``, then
 upload them to PyPI.
 
 Of course, you will need permissions to upload to PyPI, for this to work.

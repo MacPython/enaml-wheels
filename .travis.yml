@@ -2,7 +2,7 @@ env:
   global:
       # Daily commit is used on master branch and build commit on named
       # branches
-      - BUILD_COMMIT=22a5d97e130ab48665c0d9b3b4b6b148b5035dff
+      - BUILD_COMMIT=0.10.3-wheels
       - DAILY_COMMIT=master
       - REPO_DIR=enaml
       - PLAT=x86_64
@@ -17,8 +17,10 @@ language: python
 # Default Python version is usually 2.7
 python: 3.5
 sudo: required
-dist: trusty
-services: docker
+dist: xenial
+services:
+  - docker
+  - xvfb
 
 matrix:
   exclude:
@@ -62,6 +64,13 @@ matrix:
       env:
         - MB_PYTHON_VERSION=3.6
         - PLAT=i686
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.7
+    - os: linux
+      env:
+        - MB_PYTHON_VERSION=3.7
+        - PLAT=i686
     - os: osx
       language: generic
       env: MB_PYTHON_VERSION=2.7
@@ -77,6 +86,10 @@ matrix:
       language: generic
       env:
         - MB_PYTHON_VERSION=3.6
+    - os: osx
+      language: generic
+      env:
+        - MB_PYTHON_VERSION=3.7
 
 before_install:
     - if [ "$TRAVIS_BRANCH" == "master" ]; then

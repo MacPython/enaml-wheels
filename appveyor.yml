@@ -3,7 +3,7 @@
 
 environment:
   global:
-    BUILD_COMMIT: master
+    BUILD_COMMIT: 0.10.3-wheels
     REPO_DIR: enaml
     PACKAGE_NAME: enaml
     WHEELHOUSE_UPLOADER_USERNAME: travis-worker
@@ -26,6 +26,10 @@ environment:
     - PYTHON: C:\Python36
       INSTALL_QT: 1
     - PYTHON: C:\Python36-x64
+      INSTALL_QT: 1
+    - PYTHON: C:\Python37
+      INSTALL_QT: 1
+    - PYTHON: C:\Python37-x64
       INSTALL_QT: 1
 
 install:

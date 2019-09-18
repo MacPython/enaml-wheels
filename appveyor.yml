@@ -3,7 +3,7 @@
 
 environment:
   global:
-    BUILD_COMMIT: 0.10.3-wheels
+    BUILD_COMMIT: 0.10.4
     REPO_DIR: enaml
     PACKAGE_NAME: enaml
     WHEELHOUSE_UPLOADER_USERNAME: travis-worker

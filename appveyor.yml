@@ -3,7 +3,7 @@
 
 environment:
   global:
-    BUILD_COMMIT: 0.10.3-wheels
+    BUILD_COMMIT: b87a6e90084e741215f7db931efa10d619fe9508
     REPO_DIR: enaml
     PACKAGE_NAME: enaml
     WHEELHOUSE_UPLOADER_USERNAME: travis-worker
@@ -11,18 +11,6 @@ environment:
       secure: 9s0gdDGnNnTt7hvyNpn0/ZzOMGPdwPp2SewFTfGzYk7uI+rdAN9rFq2D1gAP4NQh
 
   matrix:
-    - PYTHON: C:\Python27
-      INSTALL_QT: 0
-    - PYTHON: C:\Python27-x64
-      INSTALL_QT: 0
-    - PYTHON: C:\Python34
-      INSTALL_QT: 0
-    - PYTHON: C:\Python34-x64
-      INSTALL_QT: 0
-    - PYTHON: C:\Python35
-      INSTALL_QT: 1
-    - PYTHON: C:\Python35-x64
-      INSTALL_QT: 1
     - PYTHON: C:\Python36
       INSTALL_QT: 1
     - PYTHON: C:\Python36-x64
@@ -30,6 +18,10 @@ environment:
     - PYTHON: C:\Python37
       INSTALL_QT: 1
     - PYTHON: C:\Python37-x64
+      INSTALL_QT: 1
+    - PYTHON: C:\Python38
+      INSTALL_QT: 1
+    - PYTHON: C:\Python38-x64
       INSTALL_QT: 1
 
 install:
